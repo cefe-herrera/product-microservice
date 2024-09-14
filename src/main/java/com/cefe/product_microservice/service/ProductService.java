@@ -9,4 +9,6 @@ public interface ProductService {
 
     List<ProductEntity> getAllProducts();
 
+    void createProduct(ProductEntity p);
+
 }
