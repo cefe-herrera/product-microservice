@@ -1,5 +1,6 @@
 package com.cefe.product_microservice.service.impl;
 
+import com.cefe.product_microservice.ProductMicroserviceApplication;
 import com.cefe.product_microservice.entity.ProductEntity;
 import com.cefe.product_microservice.repository.ProductRepository;
 import com.cefe.product_microservice.service.ProductService;
@@ -19,6 +20,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductEntity> getAllProducts(){
         return this.productRepository.findAll();
+    }
+
+    @Override
+    public void createProduct(ProductEntity p){
+        this.productRepository.save(p);
     }
 
 }
