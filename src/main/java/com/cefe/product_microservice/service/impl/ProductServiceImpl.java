@@ -1,6 +1,7 @@
 package com.cefe.product_microservice.service.impl;
 
 import com.cefe.product_microservice.ProductMicroserviceApplication;
+import com.cefe.product_microservice.business.ProductBO;
 import com.cefe.product_microservice.entity.ProductEntity;
 import com.cefe.product_microservice.repository.ProductRepository;
 import com.cefe.product_microservice.service.ProductService;
@@ -15,16 +16,16 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductBO productBO;
 
     @Override
     public List<ProductEntity> getAllProducts(){
-        return this.productRepository.findAll();
+        return this.productBO.getAllProducts();
     }
 
     @Override
     public void createProduct(ProductEntity p){
-        this.productRepository.save(p);
+        this.productBO.createProduct(p);
     }
 
 }
